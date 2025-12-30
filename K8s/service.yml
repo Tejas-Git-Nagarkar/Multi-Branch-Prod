@@ -1,20 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: movie-app
-  namespace: default
+  name: movie-app-service
 spec:
-  replicas: 5
+  type: LoadBalancer
   selector:
-    matchLabels:
-      app: movie-app
-  template:
-    metadata:
-      labels:
-        app: movie-app
-    spec:
-      containers:
-      - name: movie-app
-        image: kastrov/multibranch-flask-app:build-61
-        ports:
-        - containerPort: 5000
+    app: movie-app
+  ports:
+    - port: 80
+      targetPort: 5000
