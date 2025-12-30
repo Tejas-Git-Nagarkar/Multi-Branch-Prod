@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "Tejas/multibranch-flask-app"
-        GIT_USER   = "kastrokiran"
+        IMAGE_NAME = "tejasdockerhub26/multibranch-flask-app"
+        GIT_USER   = "Tejas-Git-Nagarkar"
         GIT_EMAIL  = "tejas22ju@gmail.com"
     }
 
